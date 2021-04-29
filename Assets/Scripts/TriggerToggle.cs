@@ -8,6 +8,9 @@ public class TriggerToggle : MonoBehaviour {
 
 	public GameObject toggleObject;
 	public ToggleType toggleType;
+	public float textLifetime;
+	
+	
 
 	void OnTriggerEnter (Collider other)
 	{
@@ -19,7 +22,17 @@ public class TriggerToggle : MonoBehaviour {
 				toggleObject.SetActive (false);
 			else if (toggleType == ToggleType.toggle)
 				toggleObject.SetActive (!toggleObject.activeSelf);
+
+			StartCoroutine(SelfToggleOff());
+
+			gameObject.GetComponent<BoxCollider>().enabled = false;
 		}
 		
 	}
+
+	IEnumerator SelfToggleOff()
+    {
+		yield return new WaitForSeconds(textLifetime);
+		toggleObject.SetActive(false);
+    }
 }
