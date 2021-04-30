@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialogue : MonoBehaviour
+public class DoorButton : MonoBehaviour
 {
+    public Animator doorAnimator;
+
+    void OnMouseDown()
+    {
+        Debug.Log("Door Open");
+        doorAnimator.SetBool("Door Open", true);
+    }
     // Start is called before the first frame update
     void Start()
     {
