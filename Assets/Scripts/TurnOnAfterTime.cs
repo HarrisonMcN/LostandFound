@@ -22,6 +22,12 @@ public class TurnOnAfterTime : MonoBehaviour {
 		
 	}
 
+	void OnMouseDown()
+	{
+		StartCoroutine(SelfToggleOn());
+		StartCoroutine(SelfToggleOff());
+	}
+
 
 	IEnumerator SelfToggleOn()
     {
