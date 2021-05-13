@@ -18,7 +18,7 @@ public class MouseclickTrigger : MonoBehaviour
         StartCoroutine(SelftToggleOff());
 
         Component.GetComponent<BoxCollider>().enabled = false;
-        Component.GetComponent<MeshCollider>().enabled = true;
+        
 
         if (toggleType == ToggleType.turnOn)
             text.SetActive(true);
