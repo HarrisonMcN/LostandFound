@@ -13,6 +13,9 @@ public class DoorButton : MonoBehaviour
 
         Debug.Log("Shutter Open");
         doorAnimator.SetBool("Shutter Open", true);
+
+        Debug.Log("Fade On");
+        doorAnimator.SetBool("Fade On", true);
     }
     // Start is called before the first frame update
     void Start()
