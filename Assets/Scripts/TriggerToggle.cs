@@ -14,6 +14,13 @@ public class TriggerToggle : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
+	    GameObject[] gameObjectArray = GameObject.FindGameObjectsWithTag ("AI");
+ 
+        foreach(GameObject go in gameObjectArray)
+        {
+            go.SetActive (false);
+        }
+
 		if (other.tag == "Player")
 		{
 			if (toggleType == ToggleType.turnOn)

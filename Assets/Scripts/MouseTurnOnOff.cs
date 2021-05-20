@@ -2,24 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseclickTrigger : MonoBehaviour
+public class MouseTurnOnOff : MonoBehaviour
 {
     public enum ToggleType { turnOn, turnOff, toggle }
     public GameObject text;
     public float textLifetime;
     public GameObject Component;
     public ToggleType toggleType;
- 
-
-
     void OnMouseDown()
     {
-        GameObject[] gameObjectArray = GameObject.FindGameObjectsWithTag ("AI");
- 
-        foreach(GameObject go in gameObjectArray)
-        {
-            go.SetActive (false);
-        }
+     
         text.SetActive(true);
         StartCoroutine(SelftToggleOff());
 
